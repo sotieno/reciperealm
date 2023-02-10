@@ -7,7 +7,7 @@
 * Head node can be null
 * Must print original and modified list after code execution
 
-File:[lists_remove_nth_node.py](./lists_remove_nth_node.py)
+File: [lists-remove_nth_node.py](./lists-remove_nth_node.py)
 
 ***
 
