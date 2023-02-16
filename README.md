@@ -6,4 +6,4 @@
 ## Authors
 1. Leroy Buliro
 2. Broline Oronu
-3.
+3. Sylvia Otieno
