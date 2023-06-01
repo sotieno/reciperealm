@@ -1,8 +1,8 @@
 from django.urls import path
-from views import AuthView
-from signup import SubscribeView
-from signin import SigninView
-from logout import LogoutView
+from .views import AuthView
+from .signup import SubscribeView
+from .signin import SigninView
+from .logout import LogoutView
 # from .controllers.pwdreset import resetPwdView, userVerifyView
 # from .controllers.editpassword import resetPwdEditView
 

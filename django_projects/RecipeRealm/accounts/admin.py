@@ -9,7 +9,11 @@ from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
 
+
 class UserCreationForm(forms.ModelForm):
+    """
+    User creation form instance
+    """
     password = forms.CharField(
         widget=forms.PasswordInput,
         validators=[RegexValidator(
@@ -31,18 +35,25 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
+    """
+    Changes a user instance field
+    """
     password = ReadOnlyPasswordHashField()
 
     class Meta:
         model = User
-        fields = ('email', 'alias', 'password', 'is_active')
+        fields = ('email', 'alias', 'password', 'is_active', 'is_admin')
 
 
 class UserAdmin(BaseUserAdmin):
+    """
+    Defines the User admin view
+    """
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'alias', 'date_joined','last_login', 'is_superuser', 'is_active',)
+    list_display = ('email', 'alias', 'date_joined','last_login', 'is_superuser', 'is_active', 'is_admin',)
+    list_filter = ('is_admin', )
     search_fields = ('email', 'alias',)
     readonly_fields = ('uid', 'date_joined','last_login')
     ordering = ('email',)
@@ -53,18 +64,9 @@ class UserAdmin(BaseUserAdmin):
         ('Private', {'fields': ('password',)}),
         ('Permissions', {'fields': ('is_superuser', 'is_active')}),
     )
-    # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
-    # overrides get_fieldsets to use this attribute when creating a user.
-    # add_fieldsets = (
-    #     (None, {
-    #         'classes': ('wide',),
-    #         'fields': ('email', 'password1', 'password2'),
-    #     }),
-    # )
 
 
-
-# Now register the new UserAdmin...
+# Registers the new UserAdmin...
 admin.site.register(User, UserAdmin)
 
 # ... and, since we're not using Django's built-in permissions,

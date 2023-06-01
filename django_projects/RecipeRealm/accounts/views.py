@@ -43,11 +43,11 @@ def AuthView(request):
                 request.session['nextURL'] = nextURL
 
             if User.objects.filter(email__iexact=email).exists():
-                return redirect("account:signin")
+                return redirect("accounts:signin")
             else:
-                return redirect("account:subscribe")
+                return redirect("accounts:subscribe")
 
         else:
             context['form'] = authForm(request.POST, initial=form)
 
-    return render(request, "account/auth.html", context)
+    return render(request, "accounts/index.html", context)
