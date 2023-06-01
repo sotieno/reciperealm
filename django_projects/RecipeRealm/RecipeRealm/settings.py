@@ -33,7 +33,7 @@ if os.getenv('environment') == "dev":
 
     ALLOWED_HOSTS = [
         'localhost',
-        '127.0.0.0',
+        '127.0.0.1',
     ]
 
     CSRF_COOKIE_SECURE = False
@@ -180,5 +180,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_URL = '/account/auth/'
 LOGOUT_URL = 'logout'
-# LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"

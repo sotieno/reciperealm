@@ -42,7 +42,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'alias', 'password', 'is_active', 'is_admin')
+        fields = ('email', 'alias', 'password', 'is_active', 'is_admin', 'is_staff')
 
 
 class UserAdmin(BaseUserAdmin):
@@ -52,8 +52,8 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'alias', 'date_joined','last_login', 'is_superuser', 'is_active', 'is_admin',)
-    list_filter = ('is_admin', )
+    list_display = ('email', 'alias', 'date_joined','last_login', 'is_superuser', 'is_active', 'is_admin', 'is_staff')
+    list_filter = ('is_admin', 'is_staff' )
     search_fields = ('email', 'alias',)
     readonly_fields = ('uid', 'date_joined','last_login')
     ordering = ('email',)
@@ -62,7 +62,7 @@ class UserAdmin(BaseUserAdmin):
         ('Personal info', {'fields': ('uid','email', 'alias','full_name')}),
         ('Meta', {'fields': ('date_joined','last_login')}),
         ('Private', {'fields': ('password',)}),
-        ('Permissions', {'fields': ('is_superuser', 'is_active')}),
+        ('Permissions', {'fields': ('is_superuser', 'is_active', 'is_staff')}),
     )
 
 

@@ -35,6 +35,7 @@ class UserManager(BaseUserManager):
         user = self.create_user(email, password=password)
         user.is_superuser = True
         user.is_admin = True
+        user.is_staff = True
         user.is_active = True
         user.save(using=self._db)
         return user
@@ -54,8 +55,9 @@ class User(AbstractBaseUser):
     #     max_length=24,
     #     validators=[RegexValidator(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$', message=_(" Password should be 8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character."))]
     # )
-    full_name = models.CharField(verbose_name=_('Full name'), max_length=255, null=True, blank=False)
+    full_name = models.CharField(verbose_name=_('Full name'), max_length=255, null=True, blank=False, default="No name")
     is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     date_joined = models.DateField(auto_now_add=True)
