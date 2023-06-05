@@ -19,12 +19,11 @@ class subscribeForm(forms.ModelForm):
         validators=[RegexValidator(r'^[a-z0-9]+(\.?[a-z0-9])*[a-z0-9]+@[a-z0-9\-]*\.[a-z]{2,20}$', message=_("Please enter a valid email"))],
     )
     alias = forms.CharField(
-        min_length=3,
         validators=[RegexValidator(r'^[A-Za-z0-9-_]{3,18}$', message="Username should be between 3-18 characters, and must contain letters, numbers, or '_' only.")],
     )
     password = forms.CharField(
         widget=forms.PasswordInput,
-        validators=[RegexValidator(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$', message=_(" Password should be 8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character (!@#$%)."))]
+        validators=[RegexValidator(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$', message=_("Password should be 8 to 24 characters. Must include uppercase and lowercase letters, a number and a special character (!@#$%)."))]
     )
 
     class Meta:
@@ -104,8 +103,8 @@ def AuthView(request):
                 user = authenticate(request, email=email, password=password)
                 login(request, user)
                 return redirect("core:recipes")
-            else:
-                context['regform'] = form
+            # else:
+            #     context['regform'] = form
 
         if 'login' in request.POST:
             form = signinForm(request.POST)
