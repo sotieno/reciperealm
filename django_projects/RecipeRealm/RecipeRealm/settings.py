@@ -34,6 +34,7 @@ if os.getenv('environment') == "dev":
     ALLOWED_HOSTS = [
         'localhost',
         '127.0.0.1',
+        os.getenv('LOST')
     ]
 
     CSRF_COOKIE_SECURE = False
@@ -77,6 +78,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'core',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -163,7 +166,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
 # Database Media files (Images, Video)
 
@@ -180,5 +183,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_URL = '/account/auth/'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/recipes"
+LOGOUT_REDIRECT_URL = "/recipes"
+
+# CKEDITOR SETTINGS
+CKEDITOR_CONFIGS = {
+    'full_editor': {
+        'toolbar': 'full',
+    },
+    'custom_editor': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    },
+}

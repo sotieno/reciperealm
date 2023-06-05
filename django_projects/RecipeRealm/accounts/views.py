@@ -19,6 +19,7 @@ class subscribeForm(forms.ModelForm):
         validators=[RegexValidator(r'^[a-z0-9]+(\.?[a-z0-9])*[a-z0-9]+@[a-z0-9\-]*\.[a-z]{2,20}$', message=_("Please enter a valid email"))],
     )
     alias = forms.CharField(
+        min_length=3,
         validators=[RegexValidator(r'^[A-Za-z0-9-_]{3,18}$', message="Username should be between 3-18 characters, and must contain letters, numbers, or '_' only.")],
     )
     password = forms.CharField(
@@ -28,7 +29,7 @@ class subscribeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'alias', 'full_name', 'password')
+        fields = ('email', 'alias', 'password')
 
     def clean_alias(self):
         """
@@ -85,7 +86,7 @@ class signinForm(forms.Form):
 def AuthView(request):
 
     if request.user.is_authenticated:
-        return redirect("app:index")
+        return redirect("core:recipes")
     
     context= {}
     context['regform'] = subscribeForm(initial={'full_name': 'No Name'})
@@ -97,12 +98,12 @@ def AuthView(request):
             if form.is_valid():
                 form.save()
                 email = form.cleaned_data['email'].lower()
-                full_name = form.cleaned_data['full_name']
-                alias = form.cleaned_data['alias']
+                # full_name = form.cleaned_data['full_name']
+                # alias = form.cleaned_data['alias']
                 password = form.cleaned_data['password']
-                user = authenticate(email=email, full_name=full_name, alias=alias, password=password)
+                user = authenticate(request, email=email, password=password)
                 login(request, user)
-                return redirect("app:index")
+                return redirect("core:recipes")
             else:
                 context['regform'] = form
 
@@ -114,7 +115,7 @@ def AuthView(request):
                 user = authenticate(request, email=email, password=password)
                 if user is not None:
                     login(request, user)
-                    return redirect("app:index")
+                    return redirect("core:recipes")
             else:
                 context['loginform'] = form
 
@@ -123,4 +124,4 @@ def AuthView(request):
 
 def LogoutView(request, *args, **kwargs):
     logout(request)
-    return redirect("app:index")
+    return redirect("core:recipes")

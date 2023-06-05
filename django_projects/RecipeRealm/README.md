@@ -25,8 +25,9 @@ pip install -r requirements.txt
 # setup database
 cat setup_mysql.sql | mysql -h localhost -u root -p
 
-# migrate models
+# migrate database
 python3 manage.py migrate
 
 # run server locally
-python3 manage.py runserver```
+python3 manage.py runserver
+```

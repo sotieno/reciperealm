@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe page</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'core/styles/recipe.css' %}">
+    
+</head>
+<body>
+
+<!--header-->
+<header class=" header">
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fa-solid fa-dragon"></i> RecipeRealm </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="Search for recipes" id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#favorites" class="fas fa-star"></a>
+            <a href="#reviews" class="fas fa-comments"></a>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#popular">popular</a>
+            <a href="#reviews">reviews</a>
+        </nav>
+    </div>
+
+</header>
+
+<!--header-end-->
+
+<!--bottom navbar-->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#popular" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#blogs" class="fas fa-blogs"></a>
+</nav>
+
+
+<!--home starts-->
+
+<section class="home" id="home">
+    <div class="row">
+        <div class="content">
+            <h3>Find your new favorite recipe</h3>
+            <p>Welcome to RecipeRealm, your culinary companion for exploring a world of delicious recipes! 
+                Whether you're an aspiring home cook or a seasoned chef, Recipe Realm is here to inspire and guide you
+                on a gastronomic journey.Unleash your creativity in the kitchen with our detailed step-by-step 
+                instructions, accompanied by vibrant images that will make your taste buds tingle.
+                With RecipeRealm, prepare to elevate your cooking skills and create memorable dining experiences.
+                 Get ready to embark on a culinary adventure start exploring our bountiful recipe collection today!
+            </p>
+            <a href="#" class="btn">Discover recipes</a>
+        </div>
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/1.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/2.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/3.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/4.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/5.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/6.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/8.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/9.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/13.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="{% static 'core/images/15.jpg' %}" alt=""></a>
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+
+<!--end home-->
+
+<!--icons section-->
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-mug-saucer"></i>
+        <div class="content">
+            <h3>Breakfast</h3> <!--add a-tag will link to page with breakfast reipes-->
+            <p><a href="#breakfastrecipes"> Sample some of our finest breakfast recipes</a></p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-bowl-rice"></i>
+        <div class="content">
+            <h3>Lunch</h3>
+            <p><a href="#lunchrecipes">Some recipes ideas for lunch</a></p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-utensils fa-lg"></i>
+        <div class="content">
+            <h3>Dinner</h3> 
+            <p><a href="#dinnerecipestag">Some recipes ideas for Dinner</a></p>
+        </div>
+    </div>
+    
+
+</section>
+
+<!--icons section ends-->
+
+<!--popular-picks section ends-->
+
+<section class="popular" id="popular">
+
+    <h1 class="heading"><span>popular</span> </h1>
+
+    <div class="swiper popular-slider">
+
+      <div class="swiper-wrapper">
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/1.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Chapo with beef stew</h3>
+                <div class="description">prep time</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/2.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>white rice with stew on the side</h3>
+                <div class="description">prep time:</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/3.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>ugali with eggs and spinach</h3>
+                <div class="description">prep time:</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/4.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>chips kuku</h3>
+                <div class="description">prep time: </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/5.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>brown rice pilau</h3>
+                <div class="description">prep time: </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/6.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Chicken masala</h3>
+                <div class="description">prep time:</div> 
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="swiper-slide box">
+            <div class="image">
+                <img src="{% static 'core/images/7.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Beef stew</h3>
+                <div class="description">prep time:</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </a>
+
+      </div>  
+
+    </div>
+
+
+
+</section>
+
+<!--popular-picks section ends-->
+
+<!--might add reviews non-priority-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>   
+   
+<script src="{% static 'core/scripts/recipe.js' %}"></script> 
+</body>
+</html>
