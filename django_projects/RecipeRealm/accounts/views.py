@@ -85,8 +85,8 @@ class signinForm(forms.Form):
 
 def AuthView(request):
 
-    if request.user.is_authenticated:
-        return redirect("core:recipes")
+    # if request.user.is_authenticated:
+    #     return redirect("core:recipes")
     
     context= {}
     context['regform'] = subscribeForm(initial={'full_name': 'No Name'})
