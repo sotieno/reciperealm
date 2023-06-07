@@ -83,6 +83,7 @@ header{
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
+    padding: 12px 30px 12px 30px;
 }
 
 .navigation .btnLogout:hover{
