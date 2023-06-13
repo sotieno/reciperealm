@@ -10,7 +10,7 @@
 git clone https://github.com/leroysb/group-challenges.git
 
 # change directory
-cd group-challenges/django_projects/RecipeRealm
+cd RecipeRealm
 
 # make a virtual environment
 python3 -m venv virtualenv
@@ -28,6 +28,6 @@ cat setup_mysql.sql | mysql -h localhost -u root -p
 # migrate database
 python3 manage.py migrate
 
+# reach out to one of the collaborators and request for the environment variables
 # run server locally
 python3 manage.py runserver
-```
