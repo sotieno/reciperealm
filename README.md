@@ -2,6 +2,7 @@
 ## Sections
 * [Python challenges](./python)
 * [C challenges](./c)
+* [RecipeRealm project](./RecipeRealm)
 
 ## Authors
 1. Leroy Buliro
