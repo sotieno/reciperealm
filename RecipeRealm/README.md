@@ -7,7 +7,7 @@
 ## Project setup (Local environment)
 ```
 # clone repository
-git clone https://github.com/leroysb/reciperealm.git
+git clone https://github.com/leroysb/group-challenges.git
 
 # change directory
 cd RecipeRealm
