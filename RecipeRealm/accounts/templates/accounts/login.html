@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeRealm | Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" >
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="recipe.html">Recipes</a>
+        </nav>
+    </header>
+
+    <div class="background"></div>
+    <div class="container">
+        <div class="content">
+            <h2 class="logo"><i class='bx bxs-hot' ></i>RecipeRealm</h2>
+            <div class="text-sci">
+                <h2>Hello <br><span>welcome to RecipeRealm 🙂</span></h2>
+                <p>Step into a world of culinary delights where we celebrate the art of cooking and the joy 
+                    of sharing delicious recipes. 
+                    Whether you're a seasoned chef or a novice in the kitchen, we have something for everyone.
+                </p>
+           
+                <div class="social-icons">
+                    <a href="recipe.html"><i class='bx bxs-bowl-hot'></i></a>
+                    <a href="index.html"><i class='bx bxs-home-alt-2' ></i></a>
+                    <a href="RecipeRealms-twitter"><i class='bx bxl-twitter' ></i></a>
+                    <a href="RecipeRealms-facebook"><i class='bx bxl-facebook-circle' ></i></a>
+                    <a href="RecipeRealms-instagram"><i class='bx bxl-instagram-alt' ></i></a>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="logreg-box">
+            <div class="form-box login">
+                <form action="#">
+                    <h2>Login</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot password</a>
+                    </div>
+
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link">Sign up</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box register">
+                <form action="#">
+                    <h2>Sign up</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="username" name="username" pattern=".{3,18}"  
+                        title="Username must be between 3-18 characters" required>
+                        <label>Name</label>
+                    </div>
+
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password"id="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])\S{3,24}"
+                        title="Password length: 3-24 characters, at least 1 uppercase letter(A-Z), 1 lowercase letter(a-z), and 1 symbol(@#%^)" required required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">I agree to the terms & conditions</label>
+                    </div>
+
+                    <button type="submit" class="btn">Sign UP</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+
+            
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+    
+</body>
+</html>

@@ -1,18 +1,19 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe page</title>
+    <title>RecipeRealm | page</title>
 
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="{% static 'core/styles/recipe.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/recipe.css">
     
 </head>
-<body>
+<body class="light">
 
 <!--header-->
 <header class=" header">
@@ -28,17 +29,28 @@
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="#favorites" class="fas fa-star"></a>
-            <a href="#reviews" class="fas fa-comments"></a>
+            <a href="login.html" class="fas fa-arrow-right-to-bracket"></a>
+            <a href="add.html" class="fas fa-circle-plus"></a>
+            <a href="#ourblogsALX" class="fas fa-comment"></a>
+
         </div>
 
     </div>
 
     <div class="header-2">
         <nav class="navbar">
-            <a href="#home">home</a>
+            <a href="index.html">home</a>
             <a href="#popular">popular</a>
-            <a href="#reviews">reviews</a>
+            <a href="login.html">login</a>
+        </nav>
+        <nav class="navigation">
+            <input type="checkbox" name="" id="toggle">
+      
+            <label class="toggle" for="toggle">
+                <i class="bx bxs-sun"></i>
+                <i class="bx bxs-moon"></i>
+                <span class="ball"></span>      
+            </label>
         </nav>
     </div>
 
@@ -49,10 +61,9 @@
 <!--bottom navbar-->
 
 <nav class="bottom-navbar">
-    <a href="#home" class="fas fa-home"></a>
-    <a href="#popular" class="fas fa-tags"></a>
-    <a href="#reviews" class="fas fa-comments"></a>
-    <a href="#blogs" class="fas fa-blogs"></a>
+    <a href="index.html" class="fas fa-home"></a>
+    <a href="#popular" class="fas fa-arrow-trend-up"></a>
+    <a href="login.html" class="fas fa-arrow-right-to-bracket"></a>
 </nav>
 
 
@@ -73,16 +84,16 @@
         </div>
         <div class="swiper books-slider">
             <div class="swiper-wrapper">
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/1.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/2.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/3.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/4.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/5.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/6.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/8.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/9.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/13.jpg' %}" alt=""></a>
-                <a href="#" class="swiper-slide"><img src="{% static 'core/images/15.jpg' %}" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/1.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/2.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/3.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/4.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/5.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/6.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/8.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/9.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/13.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="images/15.jpg" alt=""></a>
             </div>
             
         </div>
@@ -136,7 +147,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/1.jpg' %}" alt="">
+                <img src="images/1.jpg" alt="">
             </div>
             <div class="content">
                 <h3>Chapo with beef stew</h3>
@@ -153,7 +164,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/2.jpg' %}" alt="">
+                <img src="images/2.jpg" alt="">
             </div>
             <div class="content">
                 <h3>white rice with stew on the side</h3>
@@ -170,7 +181,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/3.jpg' %}" alt="">
+                <img src="images/3.jpg" alt="">
             </div>
             <div class="content">
                 <h3>ugali with eggs and spinach</h3>
@@ -186,7 +197,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/4.jpg' %}" alt="">
+                <img src="images/4.jpg" alt="">
             </div>
             <div class="content">
                 <h3>chips kuku</h3>
@@ -203,7 +214,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/5.jpg' %}" alt="">
+                <img src="images/5.jpg" alt="">
             </div>
             <div class="content">
                 <h3>brown rice pilau</h3>
@@ -220,7 +231,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/6.jpg' %}" alt="">
+                <img src="images/6.jpg" alt="">
             </div>
             <div class="content">
                 <h3>Chicken masala</h3>
@@ -237,7 +248,7 @@
 
         <a href="#" class="swiper-slide box">
             <div class="image">
-                <img src="{% static 'core/images/7.jpg' %}" alt="">
+                <img src="images/7.jpg" alt="">
             </div>
             <div class="content">
                 <h3>Beef stew</h3>
@@ -267,6 +278,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>   
    
-<script src="{% static 'core/scripts/recipe.js' %}"></script> 
+<script src="js/recipe.js"></script> 
 </body>
 </html>

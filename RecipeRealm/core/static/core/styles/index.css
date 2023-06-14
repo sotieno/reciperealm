@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+  .navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding: 25px 2.5%;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a{
+    position: relative;
+    font-size: 15px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+
+}
+
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background:purple;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s;
+
+
+}
+
+.navbar a:hover::after{
+    transform: translateY(0);
+    opacity: 1;
+
+}
+
+  
+  h1, h2{
+    color: #336699;
+    text-decoration: underline;
+  }
+
+  h3, h4{
+    color: #336699;
+
+  }
+  p {
+    color: #336688;
+  }
+
+  
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #162938;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #e64558;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 40px;
+  }
+
+
+  /*About us*/
+  .section{
+    width: 100%;
+    min-height: 60vh;
+    background-position: center;
+
+}
+
+.container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.content-section{
+    float: left;
+    width: 55%;
+}
+
+.image-section{
+    float: right;
+    width: 40%;
+}
+.image-section img{
+   width: 100%;
+   height: auto;
+
+}
+.content-section .title{
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #162938;
+    
+}
+.content-section .content h3{
+    margin-top: 20px;
+    color: #162938;
+    font-size: 21px;
+}
+
+.content-section .content p{
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height:1.5 ;
+}
+
+.content-section .content .switch a{
+    margin-top: 30px ;
+}
+
+.content-section .content .switch a{
+    background-color: #162938;
+    padding: 0px 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+
+}
+.content-section .content .switch a:hover{
+    background-color: #a52a2a;
+    color: #fff;
+    
+}
+
+
+@media screen and (max-width: 768px){
+    .container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+}
+.content-section{
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+.image-section{
+    float: none;
+    width: 100%;
+    
+}
+.image-section img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+
+}
+.content-section .title{
+    text-align: center;
+    font-size: 19px;
+}
+.content-section .content .switch{
+    text-align: center;
+}
+.content-section .content .switch a{
+    padding: 9px 30px;
+
+}
+
+}
+/*About-us-ends*/
+  
+  /* Featured Recipe section */
+  .featured-recipe {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .recipe-card {
+    margin-bottom: 40px;
+  }
+  
+  .recipe-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  
+  
+  /* Recipe Collections section */
+  .recipe-collections {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .recipe-collections h1{
+    font-size: 30px;
+  }
+  
+  .collection-card {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .collection-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /*contact us section*/
+  .bottle {
+    min-height: 60vh;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.bottle form{
+    width: 670px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    background:rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(70px);
+    flex-wrap: wrap;
+    background: blur;
+    
+}
+
+
+.bottle form h1{
+    color:#336699;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+
+}
+
+.bottle form input{
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #336699;
+}
+
+
+.bottle form input::placeholder{
+    color: #336699;
+    
+}
+
+.bottle form #lastName,
+.bottle form #mobile{
+    margin-left: 20px;
+}
+
+.bottle form h4{
+    color: #336699;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.bottle form textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #336699;
+    color: #336699;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 50px;
+    max-height: 50px;
+
+}
+
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194, 194, 194, 0.713);
+}
+
+.bottle form #button{
+    border: none;
+    background: #336699;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transform: 0.3s;
+}
+
+.bottle form #button:hover{
+    opacity: 0.7;
+}
+
+
+ 
+  /* reviews section */
+  .testimonial {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .testimonial-card {
+    margin-bottom: 20px;
+  }
+  
+  /* Newsletter section */
+  .newsletter {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .newsletter p {
+    margin-bottom: 20px;
+  }
+  
+  .newsletter form input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+  }
+  
+  .newsletter form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #162938;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter form button:hover {
+    background-color: #e64558;
+  }
+  
+  .reviews{
+    text-align: center;
+  }
+
+  .reviews .wrap .box{
+    text-align: center;
+  }
+
+
+
+
+  footer {
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+  }
+
+
+  body .light {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+
+}
+
+header .navigation{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    
+}
+
+
+.toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    height: 60px;
+    border-radius: 50px;
+    transition: .2s;
+}
+
+.toggle i {
+    width: 50%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.toggle .ball {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin: 7.5px;
+    border-radius: 50%;
+    transition: .3s ease-out;
+
+}
+
+.navigation input {
+    display: none;
+}
+
+/*light mode*/
+
+.light {
+    background: #fafafa;
+    
+}
+
+.light .toggle {
+    background: linear-gradient(145deg, #e1e1e1, #fff);
+    box-shadow: 3px 3px 4px #e6e6e6,
+                -3px -3px 4px #e6e6e6, ;
+
+}
+
+.light .toggle .bxs-sun {
+    color: #fafafa;
+
+}
+
+.light .toggle .bxs-moon {
+    color: #151d2a;
+    
+}
+
+.light .toggle .ball{
+    background: #151d2a; 
+
+}
+
+/*dark mode*/
+.dark {
+    background: #151d2a;
+    
+}
+
+.dark .toggle {
+    background: #151d2a;
+    box-shadow: 3px 3px 4px #0e131b,
+                -3px -3px 4px #1c2739;
+
+}
+
+.dark .toggle .bx-sun {
+    color: #fafafa;
+
+}
+
+.dark .toggle .bxs-moon {
+    color: #151d2a;
+    
+}
+
+.dark .toggle .ball{
+    background: #fafafa;
+    transform: translateX(60px);
+
+
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: -10px 0;
+}
+
+.middle {
+  text-align: center;
+}
+
+.foot {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  margin: 10px;
+  border-radius: 30%;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color: #3498db;
+  overflow: hidden;
+  position: relative;
+}
+
+.foot i {
+  line-height: 60px;
+  font-size: 26px;
+  transition: 0.2s linear;
+}
+
+.foot:hover i {
+  transform: scale(1.3);
+  color: #f1f1f1;
+}
+
+.foot::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: #3498db;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
+.foot:hover::before {
+  animation: aaa 0.7s 1;
+  top: -10%;
+  left: -10%;
+}
+
+@keyframes aaa {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}

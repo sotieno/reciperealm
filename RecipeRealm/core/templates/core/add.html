@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RecipeRealm | Add Recipes</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" >
+    <link rel="stylesheet" type="text/css" href="css/add.css">
+</head>
+<body>
+  <h1>Add New Recipe</h1>
+  
+  <form action="#add-recipe" method="POST" enctype="multipart/form-data">
+    <label>Recipe Image:</label>
+    <input type="file"  name="recipe-image" accept="image/*"><br>
+    
+    <label>Recipe Name:</label>
+    <input type="text" name="recipe-name" required>
+    
+    <label >Recipe Category:</label>
+      <select name="recipe-category">
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="dessert">Dessert</option>
+      </select>
+
+    <label>Difficulty Level:</label>
+      <select name="difficulty-level">
+          <option value="easy">Easy</option>
+          <option value="moderate">Moderate</option>
+          <option value="difficult">Difficult</option>
+      </select>
+
+    <label>Servings:</label>
+      <input type="number" name="servings">
+      
+    <label>Cooking Time:</label>
+      <input type="text"  name="cooking-time">
+    <label>Recipe Instructions:</label>
+      <textarea name="recipe-instructions" rows="4" cols="20" required></textarea>
+      
+    <label>Recipe Ingredients:</label>
+      <textarea  name="recipe-ingredients" rows="4" cols="20" required></textarea>
+    
+    <label>Additional Notes:</label>
+      <textarea name="additional-notes" rows="4" cols="50"></textarea>
+    
+    <label>Tags/Keywords:</label>
+      <input type="text"  name="recipe-tags">
+    
+    <label>Nutrition Information:</label>
+      <input type="text"  name="nutrition-info">
+    
+    <input type="submit" value="Submit Recipe">
+  </form>
+</body>
+</html>
