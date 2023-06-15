@@ -31,7 +31,9 @@
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
             <a href="{% url 'accounts:register' %}" class="fas fa-arrow-right-to-bracket"></a>
+            {% if request.user.is_authenticated %}
             <a href="{% url 'core:add' %}" class="fas fa-circle-plus"></a>
+            {% endif %}
             <a href="#ourblogsALX" class="fas fa-comment"></a>
 
         </div>
