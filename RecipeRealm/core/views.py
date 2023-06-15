@@ -16,7 +16,9 @@ def LandingView(request):
 
 
 def RecipesView(request):
-    return render(request, "core/recipes.html")
+    context = {}
+    context['recipes'] = Recipe.objects.all().order_by('publishdate')
+    return render(request, "core/recipes.html", context)
 
 
 def RecipeView(request, pk):

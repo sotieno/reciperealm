@@ -6,6 +6,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
    
   }
   .navbar{
@@ -113,14 +114,13 @@ body{
 }
 
 .image-section{
-    float: right;
-    width: 40%;
+    width: 100%;
 }
 .image-section img{
-   width: 100%;
+   width: 200px;
    height: auto;
-
 }
+
 .content-section .title{
     text-transform: uppercase;
     font-size: 15px;

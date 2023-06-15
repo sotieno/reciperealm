@@ -42,9 +42,13 @@
 
     <div class="header-2">
         <nav class="navbar">
-            <a href="{% url 'core:home' %}">home</a>
-            <a href="#popular">popular</a>
-            <a href="{% url 'accounts:register' %}">login</a>
+            <a href="{% url 'core:home' %}">Home</a>
+            <a href="#popular">Popular</a>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'accounts:logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'accounts:login' %}">Login</a>
+            {% endif %}
         </nav>
         <nav class="navigation">
             <input type="checkbox" name="" id="toggle">
@@ -66,13 +70,18 @@
 <nav class="bottom-navbar">
     <a href="{% url 'core:home' %}" class="fas fa-home"></a>
     <a href="#popular" class="fas fa-arrow-trend-up"></a>
-    <a href="{% url 'accounts:register' %}" class="fas fa-arrow-right-to-bracket"></a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'accounts:logout' %}" class="fas fa-arrow-right-to-bracket"></a>
+    {% else %}
+    <a href="{% url 'accounts:login' %}" class="fas fa-arrow-right-to-bracket"></a>
+    {% endif %}
+    
 </nav>
 
 
 <!--home starts-->
 
-<section class="home" id="home">
+<!-- <section class="home" id="home">
     <div class="row">
         <div class="content">
             <h3>Find your new favorite recipe</h3>
@@ -102,7 +111,7 @@
         </div>
     </div>
 
-</section>
+</section> -->
 
 <!--end home-->
 
@@ -275,6 +284,22 @@
 </section>
 
 <!--popular-picks section ends-->
+
+{% if recipes %}
+<section class="latest">
+    <h1 class="heading"><span>Latest</span> </h1>
+
+    <div class="card-wrapper">
+        {% for recipe in recipes %}
+        <a href="{% url 'core:recipe' pk=recipe.id %}" class="latest-card">
+            <img src="{{ recipe.featureimage.url }}" alt="{{ recipe.name }}">
+            <h2>{{ recipe.name }}</h2>
+            <button  href="{% url 'core:recipe' pk=recipe.id %}">View Recipe</button>
+        </a>
+        {% endfor %}
+    </div>  
+</section>
+{% endif %}
 
 <!--might add reviews non-priority-->
 

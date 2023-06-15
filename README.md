@@ -34,7 +34,7 @@ python3 manage.py migrate
 
 # reach out to one of the collaborators and request for the environment variables
 # app will not run without the required environment variables
-echo "your environmental variables" >> .env
+echo "your environment variables" >> .env
 
 # run server locally
 python3 manage.py runserver
@@ -51,5 +51,6 @@ We welcome contributions from the community to enhance RecipeRealm. To contribut
 * Make your changes and commit them: git commit -m 'Add feature'
 * Push to the branch: git push origin feature/your-feature
 * Submit a pull request.
+
 ## Licensing
 RecipeRealm is released under the [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

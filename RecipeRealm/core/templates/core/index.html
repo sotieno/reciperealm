@@ -16,52 +16,50 @@
 
 <body class="light">
   <header>
+
     <nav class="navigation">
       <input type="checkbox" name="" id="toggle">
-
       <label class="toggle" for="toggle">
           <i class="bx bxs-sun"></i>
           <i class="bx bxs-moon"></i>
           <span class="ball"></span>      
       </label>
-  </nav>
-  <nav class="navbar">
-    <a href="{% url 'core:recipes' %}"><i class="fa-solid fa-dragon fa-xl"></i>Recipes</a>
-    <a href="{% url 'accounts:register' %}"><i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>Login</a>
-  </nav>
-    <h1>Welcome to Recipe Realm</h1><br>
-    <p>Your Recipe Oasis</p>
-    <p>Discover the most delightful recipes for every occasion</p>
-    <br>
-    
-</header>
+    </nav>
 
-    <div class="section">
-      <div class="container">
-          <div class="content-section">
-              <div class="title">
-                  <h1>About Us</h1>
-              </div>
-              <div class="content">
-                  <h3>RecipeRealm</h3>
-                      <p>Recipe Realm,is a culinary sanctuary crafted by a dedicated team of passionate developers.
-                          Discover a vast collection of curated recipies and explore a diverse range of culinary delights.
-                          With a user-friendly experience and meticulous attention to detail, we aim to elevate your cooking adventures. 
-                          Join us in exploring the endless possibilities of the culinary realm and unleash your inner chef today!
-                      </p>
-                      <div class="switch">
-                        <a href="{% url 'core:recipes' %}">View Recipes</a>
-                    </div>
-              </div><br>
+    <nav class="navbar">
+      <a href="{% url 'core:recipes' %}"><i class="fa-solid fa-dragon fa-xl"></i>Recipes</a>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'accounts:logout' %}"><i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>Logout</a>
+      {% else %}
+      <a href="{% url 'accounts:login' %}"><i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>Login</a>
+      {% endif %}
+    </nav>
 
+    <div class="image-section">
+      <img src="{% static 'core/images/logo_transparent.png' %}" alt="RecipeRealm-logo">
+      <p>Your Recipe Oasis</p>
+    </div>
+    <!-- <p>Discover the most delightful recipes for every occasion</p> -->
+  </header>
+
+  <div class="section">
+    <div class="container">
+      <div class="content-section">
+        <div class="title"><h1>About Us</h1></div>
+        <div class="content">
+          <!-- <h3>RecipeRealm</h3> -->
+          <p>Recipe Realm,is a culinary sanctuary crafted by a dedicated team of passionate developers.
+              Discover a vast collection of curated recipies and explore a diverse range of culinary delights.
+              With a user-friendly experience and meticulous attention to detail, we aim to elevate your cooking adventures. 
+              Join us in exploring the endless possibilities of the culinary realm and unleash your inner chef today!
+          </p>
+          <div class="switch">
+            <a href="{% url 'core:recipes' %}">View Recipes</a>
           </div>
-          <div class="image-section">
-              <img src="{% static 'core/images/logo_transparent.png' %}" alt="RecipeRealm-logo">
-          </div>
-      </div>
+        </div>
+      </div>          
+    </div>
   </div>
-  <br>
-
 
   <section class="recipe-collections">
 

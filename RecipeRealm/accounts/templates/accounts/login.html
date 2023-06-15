@@ -1,180 +1,80 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeRealm | Login</title>
+    <link rel="stylesheet" href="{% static 'accounts/styles/register.css' %}">
+    <!-- <link rel="icon" type="image/x-icon" href="images/favicon.png" > -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RecipeRealm</title>
-        <link rel="stylesheet" href="{% static 'accounts/styles/style.css' %}">
-    </head>
+    <header class="header">
+        <h2><i class='bx bxs-hot' ></i>RecipeRealm</h2>
+        <nav class="navbar">
+            <a href="{% url 'core:home' %}">Home</a>
+            <a href="{% url 'core:recipes' %}">Recipes</a>
+        </nav>
+    </header>
 
-    <body>
+    <div class="background"></div>
 
-        <header>
-            <h2 class="logo">RecipeRealm</h2>
-            <nav class="navigation">
-                <a href="{% url 'core:recipes' %}">Recipes</a>
-                <a href="{% url 'core:about' %}" target="_blank">About</a>
-                <a href="{% url 'core:contact' %}" target="_blank">Contact us</a>
-                {% if user.is_authenticated %}
-                <a class="btnLogout" href="{% url 'accounts:logout' %}">Log out</a>
-                {% else %}
-                <button class="btnLogin-popup">Login</button>
-                {% endif %}
-            </nav>
-        </header>
-
-        <div class="wrapper">
-            <span class="icon-close">
-                <ion-icon name="close-outline"></ion-icon>
-            </span>
-            <div class="form-box login"> <!--login form starts here-->
+    <div class="logreg-box">
+        <div class="form-box login">
+            <form action="" method="post">
+                <!-- MODIFIED: ADDS A TOKEN TO LOGIN FORM TO DEFEND AGAINST CSRF -->
+                {% csrf_token %}
                 <h2>Login</h2>
 
-                <form action="" method="post">
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
 
-                    <!-- MODIFIED: ADDS A TOKEN TO LOGIN FORM TO DEFEND AGAINST CSRF -->
-                    {% csrf_token %}
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password</a>
+                </div>
 
-                    <div class="input-box">
-                        <span class="icon">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </span>
+                <button type="submit" name="login" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="{% url 'accounts:register' %}" class="register-link">Sign up</a></p>
+                </div>
 
-                        <!-- MODIFIED -->
-                        <!-- <input type="email" required> -->
-                        <input type="email" name="email" required>
+                <!-- BROLINE: DESIGN FORM ERRORS SECTION BELOW -->
+                <div>
+                    <!-- EMAIL FORM ERRORS -->
+                    {% for error  in loginform.email.errors %}
+                    <span class="formerror">*{{error}}</span>
+                    {% endfor %}
 
-                        <label>Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
+                    <!-- PASSWORD FORM ERRORS -->
+                    {% for error  in loginform.password.errors %}
+                    <span class="formerror">*{{error}}</span>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>    
+    </div>
 
-                        <!-- MODIFIED -->
-                        <!-- <input type="password" required> -->
-                        <input type="password" name="password" required>
+    <div class="social-icons">
+        <a href="recipe.html"><i class='bx bxs-bowl-hot'></i></a>
+        <a href="index.html"><i class='bx bxs-home-alt-2' ></i></a>
+        <a href="RecipeRealms-twitter"><i class='bx bxl-twitter' ></i></a>
+        <a href="RecipeRealms-facebook"><i class='bx bxl-facebook-circle' ></i></a>
+        <a href="RecipeRealms-instagram"><i class='bx bxl-instagram-alt' ></i></a>
+    </div>
 
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">Remember me</label>
-                        <a href="#">Forgot password?</a>
-                    </div>
-
-                    <!-- MODIFIED -->
-                    <!-- <button type="submit" class="btn">Login</button> -->
-                    <button type="submit" name="login" class="btn">Login</button>
-
-                    <div class="login-register">
-                        <p>
-                            Don't have an account? <a href="#" class="register-link">Register</a>
-                        </p>
-                    </div>
-
-                    <!-- BROLINE: DESIGN FORM ERRORS SECTION BELOW -->
-                    <div>
-                        <!-- EMAIL FORM ERRORS -->
-                        {% for error  in loginform.email.errors %}
-                        <span class="formerror">*{{error}}</span>
-                        {% endfor %}
+    <script src="{% static 'accounts/scripts/register.js' %}"></script>
     
-                        <!-- PASSWORD FORM ERRORS -->
-                        {% for error  in loginform.password.errors %}
-                        <span class="formerror">*{{error}}</span>
-                        {% endfor %}
-                    </div>
-
-                </form>
-
-            </div>
-
-            <div class="form-box register"> <!--Registration form starts here-->
-                <h2>Registration</h2>
-
-                <form action="" method="post">
-
-                    <!-- MODIFIED: ADDS A TOKEN TO REGISTRATION FORM TO DEFEND AGAINST CSRF -->
-                    {% csrf_token %}
-
-                    <div class="input-box">
-                        <span class="icon">
-                            <ion-icon name="person-outline"></ion-icon>
-                        </span>
-
-                        <!-- MODIFIED -->
-                        <input type="text" name="alias" required minlength="3" maxlength="18">
-
-                        <label>Username</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </span>
-
-                        <!-- MODIFIED -->
-                        <!-- <input type="email" required> -->
-                        <input type="text" name="email" required>
-                        <label>Email</label>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-
-                        <!-- MODIFIED -->
-                        <!-- <input type="password" required> -->
-                        <input type="password" name="password" required minlength="8" maxlength="24">
-
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">I agree to the terms and conditions</label>
-                        
-                    </div>
-
-                    <!-- MODIFIED -->
-                    <button type="submit" name="registration" class="btn">Register</button>
-
-                    <div class="login-register">
-                        <p>
-                            Already have an account?<a href="#" class="login-link">Login</a>
-                        </p>
-                    </div>
-
-                    <!-- BROLINE: DESIGN FORM ERRORS SECTION BELOW -->
-
-                    <div>
-                        <!-- USERNAME FORM ERRORS -->
-                        {% for error  in regform.alias.errors %}
-                        <span class="formerror">*{{error}}</span>
-                        {% endfor %}
-    
-    
-                        <!-- EMAIL FORM ERRORS -->
-                        {% for error  in regform.email.errors %}
-                        <span class="formerror">*{{error}}</span>
-                        {% endfor %}
-    
-                        <!-- PASSWORD FORM ERRORS -->
-                        {% for error  in regform.password.errors %}
-                        <span class="formerror">*{{error}}</span>
-                        {% endfor %}
-                    </div>
-
-                </form>
-
-            </div>
-        </div>
-
-        <script src="/static/accounts/scripts/script.js"></script>
-
-        <!--script for included icons-->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    </body>
+</body>
 </html>

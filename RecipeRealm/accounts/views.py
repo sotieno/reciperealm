@@ -89,7 +89,6 @@ def RegisterView(request):
     
     context= {}
     context['regform'] = subscribeForm(initial={'full_name': 'No Name'})
-    context['loginform'] = signinForm()
 
     if request.method == "POST":
         if 'registration' in request.POST:
@@ -105,18 +104,6 @@ def RegisterView(request):
                 return redirect("core:recipes")
             else:
                 context['regform'] = form
-
-        if 'login' in request.POST:
-            form = signinForm(request.POST)
-            if form.is_valid():
-                email = form.cleaned_data['email']
-                password = form.cleaned_data['password']
-                user = authenticate(request, email=email, password=password)
-                if user is not None:
-                    login(request, user)
-                    return redirect("core:recipes")
-            else:
-                context['loginform'] = form
 
     return render(request, "accounts/register.html", context)
 

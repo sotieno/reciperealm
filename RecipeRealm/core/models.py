@@ -20,7 +20,7 @@ class Recipe(models.Model):
     notes = RichTextField(config_name='full_editor', blank=True, null=True)
     nutrition = RichTextField(config_name='full_editor', blank=True, null=True)
     featureimage = models.ImageField(upload_to='core/recipes/%Y/%m/')
-    publishdate = models.DateField(auto_now_add=True)
+    publishdate = models.DateTimeField(auto_now_add=True)
     tags = models.CharField(max_length=100, default="Untagged")
 
     def __str__(self):

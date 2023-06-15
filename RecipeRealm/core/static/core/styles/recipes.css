@@ -470,3 +470,64 @@ header .navigation{
         font-size: 50%;
     }
 }
+
+/* Leroy's addition for latest section */
+
+.latest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    border: var(--border);
+    margin: 1rem 9vw;
+}
+
+.latest .card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.latest .card-wrapper .latest-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.latest .card-wrapper .latest-card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    padding: 12px;
+}
+
+.latest .card-wrapper .latest-card button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.latest .card-wrapper .latest-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+@media only screen and (max-width: 768px){
+    .latest {
+        padding: 2rem 1rem;
+        margin: 1rem 3vw;
+    }
+
+    .latest .card-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
