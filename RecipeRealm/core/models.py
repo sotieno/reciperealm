@@ -5,55 +5,26 @@ from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
 
-
-class Cuisine(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=250)
-    country = models.CharField(max_length = 100)
-    slug = models.CharField(max_length=250)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        db_table = 'cuisines'
-
-
-class CuisineType(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    RECIPE_TYPES = (
-        ('BR', 'Breakfast'),
-        ('LN', 'Lunch'),
-        ('DN', 'Dinner'),
-    )
-    name = models.CharField(max_length=10, choices=RECIPE_TYPES)
-    slug = models.CharField(max_length=250)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        db_table = 'recipe_types'
-
-
 class Recipe(models.Model):
     id = models.BigAutoField(primary_key=True)
     author = models.ForeignKey(User, related_name='authors', on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     slug = models.CharField(max_length=250)
-    cuisine = models.ForeignKey(Cuisine, related_name='cuisines', on_delete=models.PROTECT)
-    recipe_type = models.ForeignKey(CuisineType, related_name='types', on_delete=models.PROTECT)
-    ingredients = models.CharField(max_length=1000, blank=True, null=True)
-    cooking_duration = models.PositiveIntegerField(default=0)
-    cooking_method = RichTextField(config_name='full_editor', blank=True, null=True)
-    featureimage = models.ImageField(upload_to='core/article/%Y/%m/')
-    publishdate = models.DateField(auto_now_add=False)
-
-    def get_absolute_url(self):
-        return f'/recipe/{self.id}/{self.slug}/'
+    cuisine = models.CharField(max_length=50, default="Null")
+    category = models.CharField(max_length=50,  default="Uncategorized")
+    level = models.CharField(max_length=50, default='Null')
+    servings = models.PositiveIntegerField()
+    duration = models.PositiveIntegerField()
+    method = RichTextField(config_name='full_editor', blank=True, null=True)
+    ingredients = RichTextField(config_name='full_editor', blank=True, null=True)
+    notes = RichTextField(config_name='full_editor', blank=True, null=True)
+    nutrition = RichTextField(config_name='full_editor', blank=True, null=True)
+    featureimage = models.ImageField(upload_to='core/recipes/%Y/%m/')
+    publishdate = models.DateField(auto_now_add=True)
+    tags = models.CharField(max_length=100, default="Untagged")
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
         ordering = ['-publishdate']

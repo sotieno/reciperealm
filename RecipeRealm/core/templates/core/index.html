@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Realm | Home</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.png" >
+    {# <link rel="icon" type="image/x-icon" href="images/favicon.png" > #}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="{% static 'core/styles/index.css' %}">
 
 </head>
 
@@ -25,8 +26,8 @@
       </label>
   </nav>
   <nav class="navbar">
-    <a href="recipe.html"><i class="fa-solid fa-dragon fa-xl"></i>Recipes</a>
-    <a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>Login</a>
+    <a href="{% url 'core:recipes' %}"><i class="fa-solid fa-dragon fa-xl"></i>Recipes</a>
+    <a href="{% url 'accounts:register' %}"><i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>Login</a>
   </nav>
     <h1>Welcome to Recipe Realm</h1><br>
     <p>Your Recipe Oasis</p>
@@ -49,13 +50,13 @@
                           Join us in exploring the endless possibilities of the culinary realm and unleash your inner chef today!
                       </p>
                       <div class="switch">
-                        <a href="recipe.html">View Recipes</a>
+                        <a href="{% url 'core:recipes' %}">View Recipes</a>
                     </div>
               </div><br>
 
           </div>
           <div class="image-section">
-              <img src="images/logo_transparent.png" alt="RecipeRealm-logo">
+              <img src="{% static 'core/images/logo_transparent.png' %}" alt="RecipeRealm-logo">
           </div>
       </div>
   </div>
@@ -68,34 +69,34 @@
       <h2>Explore Popular Recipe Collections</h2>
       
         <div class="collection-card">
-          <img src="images/4.jpg" alt="Quick and Easy Meals Collection">
+          <img src="{% static 'core/images/4.jpg' %}" alt="Quick and Easy Meals Collection">
           <h3>Quick and Easy Meals</h3>
           <p>Explore a collection of delicious recipes ready in no time.</p>
-          <a href="recipe.html" class="button">Browse Recipes</a>
+          <a href="{% url 'core:recipes' %}" class="button">Browse Recipes</a>
         </div>
 
         <div class="collection-card">
-          <img src="images/4.jpg" alt="Healthy Vegan Recipes Collection">
+          <img src="{% static 'core/images/4.jpg' %}" alt="Healthy Vegan Recipes Collection">
           <h3>Healthy Vegan Recipes</h3>
           <p>Discover nutritious plant-based recipes for a healthy lifestyle.</p>
-          <a href="recipe.html" class="button">Browse Recipes</a>
+          <a href="{% url 'core:recipes' %}" class="button">Browse Recipes</a>
         </div>
        
         <div class="collection-card">
-          <img src="images/4.jpg" alt="Baking and Desserts Recipes Collection">
+          <img src="{% static 'core/images/4.jpg' %}" alt="Baking and Desserts Recipes Collection">
           <h3>Baking and Desserts</h3>
           <p>Satisfy Your Sweet Tooth: Discover Heavenly Baking and Dessert Recipes!</p>
-          <a href="recipe.html" class="button">Browse Recipes</a>
+          <a href="{% url 'core:recipes' %}" class="button">Browse Recipes</a>
         </div>
   </section><br>
 
   <section class="featured-recipe">
     <h2>Today's Featured Recipe</h2>
     <div class="recipe-card">
-        <img src="images/pilau.jpg" alt="Featured Recipe">
+        <img src="{% static 'core/images/pilau.jpg' %}" alt="Featured Recipe">
           <h3>Pilau</h3>
           <p>Try this mouth-watering Kenyan dish with bold flavors.</p>
-          <a href="page.html" class="button">Get the Recipe</a>
+          <a href="{% url 'core:recipes' %}" class="button">Get the Recipe</a>
     </div>
 </section><br>
 
@@ -131,7 +132,7 @@
       <div class="wrap">
 
         <div class="box">
-          <img src="images/k.png" alt="">
+          <img src="{% static 'core/images/k.png' %}" alt="">
           <h4>Mickey</h4>
           <p>"The recipes on Recipe Realm are outstanding! I've tried several and they never disappoint."
           </p>
@@ -144,7 +145,7 @@
           </div>
 
           <div class="box">
-            <img src="images/w.png" alt="">
+            <img src="{% static 'core/images/w.png' %}" alt="">
             <h4>Jane</h4>
             <p>"Healthy, flavorful, and easy-to-make vegetarian dishes. Love this site!"
             </p>
@@ -157,7 +158,7 @@
             </div>
 
             <div class="box">
-              <img src="images/m.png" alt="">
+              <img src="{% static 'core/images/m.png' %}" alt="">
               <h4>Tim</h4>
               <p>"Delicious and diverse recipes, easy to follow. Highly recommend!"
               </p>
@@ -209,7 +210,7 @@
   </footer>
 
 
-  <script src="js/index.js"></script>
+  <script src="{% static 'core/scripts/index.js' %}"></script>
 
 
 </body>

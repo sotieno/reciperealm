@@ -181,10 +181,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Authentication
 
 AUTH_USER_MODEL = 'accounts.User'
-LOGIN_URL = '/account/auth/'
+LOGIN_URL = '/myaccount/auth/'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = "/recipes"
-LOGOUT_REDIRECT_URL = "/recipes"
+LOGOUT_REDIRECT_URL = "/"
 
 # CKEDITOR SETTINGS
 CKEDITOR_CONFIGS = {

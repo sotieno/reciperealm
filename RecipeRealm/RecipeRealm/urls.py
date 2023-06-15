@@ -30,6 +30,4 @@ urlpatterns = [
 urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# handler404 = 'app.errorviews.page404'
-# handler500 = 'app.errorviews.page500'
-# handler400 = 'app.errorviews.page404'
+handler404 = 'core.views.page404'

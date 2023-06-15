@@ -82,10 +82,10 @@ class signinForm(forms.Form):
             raise ValidationError(msg, code='invalid')
 
 
-def AuthView(request):
+def RegisterView(request):
 
-    # if request.user.is_authenticated:
-    #     return redirect("core:recipes")
+    if request.user.is_authenticated:
+        return redirect("core:recipes")
     
     context= {}
     context['regform'] = subscribeForm(initial={'full_name': 'No Name'})
@@ -103,8 +103,8 @@ def AuthView(request):
                 user = authenticate(request, email=email, password=password)
                 login(request, user)
                 return redirect("core:recipes")
-            # else:
-            #     context['regform'] = form
+            else:
+                context['regform'] = form
 
         if 'login' in request.POST:
             form = signinForm(request.POST)
@@ -118,7 +118,31 @@ def AuthView(request):
             else:
                 context['loginform'] = form
 
-    return render(request, "accounts/index.html", context)
+    return render(request, "accounts/register.html", context)
+
+
+def LoginView(request):
+
+    if request.user.is_authenticated:
+        return redirect("core:recipes")
+    
+    context= {}
+    context['loginform'] = signinForm()
+
+    if request.method == "POST":
+        if 'login' in request.POST:
+            form = signinForm(request.POST)
+            if form.is_valid():
+                email = form.cleaned_data['email']
+                password = form.cleaned_data['password']
+                user = authenticate(request, email=email, password=password)
+                if user is not None:
+                    login(request, user)
+                    return redirect("core:recipes")
+            else:
+                context['loginform'] = form
+
+    return render(request, "accounts/login.html", context)
 
 
 def LogoutView(request, *args, **kwargs):

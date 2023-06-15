@@ -62,7 +62,7 @@ class UserAdmin(BaseUserAdmin):
         ('Personal info', {'fields': ('uid','email', 'alias','full_name')}),
         ('Meta', {'fields': ('date_joined','last_login')}),
         ('Private', {'fields': ('password',)}),
-        ('Permissions', {'fields': ('is_superuser', 'is_active', 'is_staff')}),
+        ('Permissions', {'fields': ('is_superuser', 'is_active', 'is_staff', 'is_admin')}),
     )
 
 
