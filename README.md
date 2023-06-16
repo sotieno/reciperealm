@@ -34,14 +34,24 @@ python3 manage.py migrate
 
 # reach out to one of the collaborators and request for the environment variables
 # app will not run without the required environment variables
-echo"" >> .env
+echo "environmental variables" >> .env
 
 # run server locally
 python3 manage.py runserver
 ```
 
 ## Usage
+* Users can search for recipes by entering ingredients, dietary restrictions, or cuisine type in the search bar
+* Clicking on a recipe displays detailed information, including ingredients, instructions, and nutritional facts.
 
 ## Contributing
+We welcome contributions from the community to enhance RecipeRealm. To contribute, please follow these steps:
 
+* Fork the repository.
+* Create a new branch: git checkout -b feature/your-feature
+* Make your changes and commit them: git commit -m 'Add feature'
+* Push to the branch: git push origin feature/your-feature
+* Submit a pull request.
 ## Licensing
+RecipeRealm is released under the [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
